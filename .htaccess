@@ -1,0 +1,28 @@
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE application/javascript application/x-javascript image/css text/css css text/javascript js javascript image/png png text/html htm
+</IfModule>
+
+<IfModule mod_expires.c>
+	ExpiresActive on
+	ExpiresDefault A600
+	ExpiresByType image/gif "access plus 90 day"
+        ExpiresByType application/javascript "access plus 90 day"
+        ExpiresByType image/svg+xml "access plus 90 day"
+	ExpiresByType image/jpeg "access plus 90 day"
+	ExpiresByType image/png "access plus 90 day"
+	ExpiresByType image/x-icon "access plus 90 days"
+        ExpiresByType text/css "access plus 90 day"
+        ExpiresByType text/javascript "access plus 90 day"
+	<FilesMatch "\.(php)$">
+		ExpiresByType text/html "now"
+	</FilesMatch>
+</IfModule>
+
+FileETag MTime Size
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule !\.(gif|jpg|png|txt|php|svg)$ index.php [L]
+    RewriteCond %{REQUEST_URI} !^/
+    RewriteRule ^(.*)$ $1 [L]
+</IfModule>
