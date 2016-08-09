@@ -7,7 +7,7 @@ require_once 'Wea/AnalisadorRequisicao.php';
 class Roteador{
     
     public $analisadorRequisicao;
-    private $roteador;
+    public $roteador;
     private $pagina;
 
 
@@ -18,7 +18,7 @@ class Roteador{
     
     private function setArqPaginas($arqPaginas = NULL){
         if(!is_null($arqPaginas)){
-            require_once $arqPaginas;
+            include_once $arqPaginas;
             $this->roteador['paginas'] = $paginas;
         }
     }

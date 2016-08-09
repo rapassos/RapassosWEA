@@ -34,7 +34,7 @@ class Config {
         ini_set('log_errors', 1);
         ini_set('error_log', APPLICATION_PATH  . 'logs/error_log.txt');
         error_reporting(E_ALL);
-        echo 'EnableDisplayErros';
+        //echo 'EnableDisplayErros';
     }
 
 }
