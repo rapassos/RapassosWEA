@@ -16,7 +16,7 @@ class AnalisadorRequisicao{
         $this->servidor = getenv('HTTP_HOST');
         $this->requisicao = getenv('REDIRECT_URL');
         $this->tipoRequisicao = getenv('REQUEST_METHOD');
-        echo $this->servidor;
+        //echo $this->servidor;
     }
     
     public function getURLCompleta() {

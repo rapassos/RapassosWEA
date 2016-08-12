@@ -1,5 +1,10 @@
 <?php
+$this->layout->setLayout('test');
 
-include 'layouts/default.php';
+$pagina = $this->roteador->getPagina();
+$pagina['meta'] = [];
+$pagina['scripts'] = [];
 
-phpinfo();
+include_once $this->layout->getHeader();
+echo 'Conteúdo';
+include_once $this->layout->getFooter();
